@@ -1,4 +1,4 @@
-import os
+import time, os
 class Persona():
     def __init__(self, nombre, rut, sexo, fnacimiento, peso, fechapesaje, altura, aon):
         self.nom=nombre
@@ -39,7 +39,11 @@ class Persona():
                 self.desc_imc='OBESIDAD MUY SEVERA'
             else:
                 self.desc_imc='caso particular...'
-
+def clear():
+    if os.name=="nt":
+        os.system("cls")
+    else:
+        os.system("clear")
 def menu():
     print('\n\tSistema IMC.\n1.-Agregar persona\n2.-Buscar persona\n3.-Mostrar gente sobre el peso normal\n4.-Mostrar gente bajo el peso normal\n5.-Mostrar gente dentro del peso normal\n6.-Mostrar todas las personas registradas\n7.-Eliminar persona\n8.-Salir')
 if __name__=='__main__':
@@ -62,34 +66,50 @@ if __name__=='__main__':
                 for i in personas:
                     i.obtenerIMC
             print('Agregado/a correctamente...')
+            input('Presione enter para continuar...')
+            clear()
         elif opc==2:
             rut=input('Ingrese rut: ')
             for i in personas:
                 if i.rut==rut:
                     print('Persona encontrada!\nNombre: ', i.nom,'\nRut: ',i.rut,'\nSexo: ', i.sex, '\nFecha de nacimiento: ', i.fecha)
                     print('Peso: ', i.peso,'\nFecha de pesaje: ',i.fechapesaje,'\nAltura: ',i.altura,' mts.\nAtleta: ', i.aon, '\nEstado: ', i.desc_imc)
+                else:
+                    print('Persona no registrada...')
+            input('Presione enter para continuar...')
+            clear()
         elif opc==3:
             for j,i in enumerate(personas):
                 if i.imc>20:
                     print('\t',j ,'\nNombre: ', i.nom,'\nRut: ',i.rut,'\nSexo: ', i.sex, '\nFecha de nacimiento: ', i.fecha)
                     print('Peso: ', i.peso,'\nFecha de pesaje: ',i.fechapesaje,'\nAltura: ',i.altura,' mts.\nAtleta: ', i.aon, '\nEstado: ', i.desc_imc)
+            input('Presione enter para continuar...')
+            clear()
         elif opc==4:
             for j,i in enumerate(personas):
                 if i.imc<20:
                     print('\t',j ,'\nNombre: ', i.nom,'\nRut: ',i.rut,'\nSexo: ', i.sex, '\nFecha de nacimiento: ', i.fecha)
                     print('Peso: ', i.peso,'\nFecha de pesaje: ',i.fechapesaje,'\nAltura: ',i.altura,' mts.\nAtleta: ', i.aon, '\nEstado: ', i.desc_imc)
+            input('Presione enter para continuar...')
+            clear()
         elif opc==5:
             for j,i in enumerate(personas):
                 if i.imc>20 and i.imc<23.9:
                     print('\t',j ,'\nNombre: ', i.nom,'\nRut: ',i.rut,'\nSexo: ', i.sex, '\nFecha de nacimiento: ', i.fecha)
                     print('Peso: ', i.peso,'\nFecha de pesaje: ',i.fechapesaje,'\nAltura: ',i.altura,' mts.\nAtleta: ', i.aon, '\nEstado: ', i.desc_imc)
+            input('Presione enter para continuar...')
+            clear()
         elif opc==6:
             for j,i in enumerate(personas):
                 print('\t',j ,'\nNombre: ', i.nom,'\nRut: ',i.rut,'\nSexo: ', i.sex, '\nFecha de nacimiento: ', i.fecha)
                 print('Peso: ', i.peso,'\nFecha de pesaje: ',i.fechapesaje,'\nAltura: ',i.altura,' mts.\nAtleta: ', i.aon, '\nEstado: ', i.desc_imc)
+            input('Presione enter para continuar...')
+            clear()
         elif opc==7:
             rut=input('Ingrese rut: ')
             for x in personas:
                 if rut==x.rut:
                     personas.remove(x)
             print('Eliminado con exito.')
+            input('Presione enter para continuar...')
+            clear()
