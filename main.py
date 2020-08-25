@@ -9,8 +9,8 @@ class Persona():
         self.fechapesaje=fechapesaje
         self.altura=altura
         self.desc_imc=''
-    def obtenerIMC(self, peso, altura):
-        self.imc=peso/altura**2
+    def obtenerIMC(self):
+        self.imc=self.peso/self.altura**2
         if(self.sex=='m' or self.sex=='M'):
             if(self.imc<20):
                 self.desc_imc='BAJO PESO'
@@ -37,3 +37,12 @@ class Persona():
                 self.desc_imc='OBESIDAD MUY SEVERA'
             else:
                 self.desc_imc='caso particular...'
+
+def menu():
+    print('\n\tSistema IMC.\n1.-Agregar persona\n2.-Buscar persona\n3.-Mostrar gente sobre el peso normal\n4.-Mostrar gente bajo el peso normal\n5.-Mostrar gente dentro del peso normal\n6.-Salir.')
+if __name__=='__main__':
+    opc=0
+    personas=[]
+    while(opc!=6):
+        menu()
+        pass
