@@ -214,8 +214,8 @@ if __name__=='__main__':
             rut=input('Ingrese rut: ')
             for i in personas:
                 if i.rut==rut:
-                    print('Persona encontrada!\nNombre: ', i.nom,'\nRut: ',i.rut,'\nSexo: ', i.sex, '\nFecha de nacimiento: ', i.fecha,'\nIMC: ', i.imc)
-                    print('Peso: ', i.peso,'\nFecha de pesaje: ',i.fechapesaje,'\nAltura: ',i.altura,' mts.\nAtleta: ', i.aon, '\nEstado: ', i.desc_imc)
+                    print('Persona encontrada!\nNombre: ', i.nom,'\nRut: ',i.rut,'\nSexo: ', i.sex, '\nFecha de nacimiento: ', i.fecha,'\nIMC: ', i.imc, '\nGrasa corporal: ', i.gc,'%')
+                    print('Peso: ', i.peso,'\nFecha de pesaje: ',i.fechapesaje,'\nAltura: ',i.altura,' mts.\nAtleta: ', i.aon, '\nEstado IMC: ', i.desc_imc,'\nEstado GC: ', i.desc_gc)
                 else:
                     print('Persona no registrada...')
             input('Presione enter para continuar...')
@@ -223,28 +223,28 @@ if __name__=='__main__':
         elif opc==3:
             for j,i in enumerate(personas):
                 if i.imc>20:
-                    print('\t',j ,'\nNombre: ', i.nom,'\nRut: ',i.rut,'\nSexo: ', i.sex, '\nFecha de nacimiento: ', i.fecha)
-                    print('Peso: ', i.peso,'\nFecha de pesaje: ',i.fechapesaje,'\nAltura: ',i.altura,' mts.\nAtleta: ', i.aon, '\nEstado: ', i.desc_imc)
+                    print('Persona encontrada!\nNombre: ', i.nom,'\nRut: ',i.rut,'\nSexo: ', i.sex, '\nFecha de nacimiento: ', i.fecha,'\nIMC: ', i.imc, '\nGrasa corporal: ', i.gc,'%')
+                    print('Peso: ', i.peso,'\nFecha de pesaje: ',i.fechapesaje,'\nAltura: ',i.altura,' mts.\nAtleta: ', i.aon, '\nEstado IMC: ', i.desc_imc,'\nEstado GC: ', i.desc_gc)
             input('Presione enter para continuar...')
             clear()
         elif opc==4:
             for j,i in enumerate(personas):
                 if i.imc<20:
-                    print('\t',j ,'\nNombre: ', i.nom,'\nRut: ',i.rut,'\nSexo: ', i.sex, '\nFecha de nacimiento: ', i.fecha)
-                    print('Peso: ', i.peso,'\nFecha de pesaje: ',i.fechapesaje,'\nAltura: ',i.altura,' mts.\nAtleta: ', i.aon, '\nEstado: ', i.desc_imc)
+                    print('Persona encontrada!\nNombre: ', i.nom,'\nRut: ',i.rut,'\nSexo: ', i.sex, '\nFecha de nacimiento: ', i.fecha,'\nIMC: ', i.imc, '\nGrasa corporal: ', i.gc,'%')
+                    print('Peso: ', i.peso,'\nFecha de pesaje: ',i.fechapesaje,'\nAltura: ',i.altura,' mts.\nAtleta: ', i.aon, '\nEstado IMC: ', i.desc_imc,'\nEstado GC: ', i.desc_gc)
             input('Presione enter para continuar...')
             clear()
         elif opc==5:
             for j,i in enumerate(personas):
                 if i.imc>20 and i.imc<23.9:
-                    print('\t',j ,'\nNombre: ', i.nom,'\nRut: ',i.rut,'\nSexo: ', i.sex, '\nFecha de nacimiento: ', i.fecha)
-                    print('Peso: ', i.peso,'\nFecha de pesaje: ',i.fechapesaje,'\nAltura: ',i.altura,' mts.\nAtleta: ', i.aon, '\nEstado: ', i.desc_imc)
+                    print('Persona encontrada!\nNombre: ', i.nom,'\nRut: ',i.rut,'\nSexo: ', i.sex, '\nFecha de nacimiento: ', i.fecha,'\nIMC: ', i.imc, '\nGrasa corporal: ', i.gc,'%')
+                    print('Peso: ', i.peso,'\nFecha de pesaje: ',i.fechapesaje,'\nAltura: ',i.altura,' mts.\nAtleta: ', i.aon, '\nEstado IMC: ', i.desc_imc,'\nEstado GC: ', i.desc_gc)
             input('Presione enter para continuar...')
             clear()
         elif opc==6:
             for j,i in enumerate(personas):
-                print('\t',j ,'\nNombre: ', i.nom,'\nRut: ',i.rut,'\nSexo: ', i.sex, '\nFecha de nacimiento: ', i.fecha)
-                print('Peso: ', i.peso,'\nFecha de pesaje: ',i.fechapesaje,'\nAltura: ',i.altura,' mts.\nAtleta: ', i.aon, '\nEstado: ', i.desc_imc)
+                    print('Persona encontrada!\nNombre: ', i.nom,'\nRut: ',i.rut,'\nSexo: ', i.sex, '\nFecha de nacimiento: ', i.fecha,'\nIMC: ', i.imc, '\nGrasa corporal: ', i.gc,'%')
+                    print('Peso: ', i.peso,'\nFecha de pesaje: ',i.fechapesaje,'\nAltura: ',i.altura,' mts.\nAtleta: ', i.aon, '\nEstado IMC: ', i.desc_imc,'\nEstado GC: ', i.desc_gc)
             input('Presione enter para continuar...')
             clear()
         elif opc==7:
