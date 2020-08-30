@@ -197,17 +197,25 @@ if __name__=='__main__':
             n=input('Ingrese nombre: ')
             rut=input('Ingrese rut(sin puntos, con guion "nnnnnnnn-n"): ')
             sex=input('Ingrese sexo(m;f): ')
+            while sex not in 'mfMF':
+                print('Las opciones a ingresar son "m" o "f", sea en mayusculas o minusculas...\nIngrese nuevamente...')
+                sex=input('Ingrese sexo(m;f): ')
             fn=input('Ingrese fecha de naciemiento(dd/mm/aaaa):')
             wgt=float(input('Ingrese peso(Kg): '))
-            fp=input('Ingrese fecha de pesaje(dd/mm/aaa): ')
+            fp=input('Ingrese fecha de pesaje(dd/mm/aaaa): ')
             hgt=float(input('Ingrese altura (en metros):'))
             aon=input('Es esta persona atleta?(1=si ; 0=no): ')
-            personas.append(Persona(n,rut,sex,fn,wgt,fp,hgt,aon))
+            if len(personas)!=0:
+                for i in personas:
+                    if i.nom==n or i.rut==rut:
+                        print("Esta persona ya esta agregada en el sistema.")
+            else:
+                personas.append(Persona(n,rut,sex,fn,wgt,fp,hgt,aon))
+                print('Agregado/a correctamente...')
             if len(personas)!=0:
                 for i in personas:
                     i.obtenerIMC
                     i.obtenerGC
-            print('Agregado/a correctamente...')
             input('Presione enter para continuar...')
             clear()
         elif opc==2:
@@ -223,27 +231,27 @@ if __name__=='__main__':
         elif opc==3:
             for j,i in enumerate(personas):
                 if i.imc>20:
-                    print('Persona encontrada!\nNombre: ', i.nom,'\nRut: ',i.rut,'\nSexo: ', i.sex, '\nFecha de nacimiento: ', i.fecha,'\nIMC: ', i.imc, '\nGrasa corporal: ', i.gc,'%')
+                    print('Persona sobre el peso normal ',j, '\nNombre: ', i.nom,'\nRut: ',i.rut,'\nSexo: ', i.sex, '\nFecha de nacimiento: ', i.fecha,'\nIMC: ', i.imc, '\nGrasa corporal: ', i.gc,'%')
                     print('Peso: ', i.peso,'\nFecha de pesaje: ',i.fechapesaje,'\nAltura: ',i.altura,' mts.\nAtleta: ', i.aon, '\nEstado IMC: ', i.desc_imc,'\nEdad: ', i.edad,'\nEstado GC: ', i.desc_gc)
             input('Presione enter para continuar...')
             clear()
         elif opc==4:
             for j,i in enumerate(personas):
                 if i.imc<20:
-                    print('Persona encontrada!\nNombre: ', i.nom,'\nRut: ',i.rut,'\nSexo: ', i.sex, '\nFecha de nacimiento: ', i.fecha,'\nIMC: ', i.imc, '\nGrasa corporal: ', i.gc,'%')
+                    print('Persona bajo el peso normal ',j,'\nNombre: ', i.nom,'\nRut: ',i.rut,'\nSexo: ', i.sex, '\nFecha de nacimiento: ', i.fecha,'\nIMC: ', i.imc, '\nGrasa corporal: ', i.gc,'%')
                     print('Peso: ', i.peso,'\nFecha de pesaje: ',i.fechapesaje,'\nAltura: ',i.altura,' mts.\nAtleta: ', i.aon, '\nEstado IMC: ', i.desc_imc,'\nEdad: ', i.edad,'\nEstado GC: ', i.desc_gc)
             input('Presione enter para continuar...')
             clear()
         elif opc==5:
             for j,i in enumerate(personas):
                 if i.imc>20 and i.imc<23.9:
-                    print('Persona encontrada!\nNombre: ', i.nom,'\nRut: ',i.rut,'\nSexo: ', i.sex, '\nFecha de nacimiento: ', i.fecha,'\nIMC: ', i.imc, '\nGrasa corporal: ', i.gc,'%')
+                    print('Persona dentro del peso normal ',j,'\nNombre: ', i.nom,'\nRut: ',i.rut,'\nSexo: ', i.sex, '\nFecha de nacimiento: ', i.fecha,'\nIMC: ', i.imc, '\nGrasa corporal: ', i.gc,'%')
                     print('Peso: ', i.peso,'\nFecha de pesaje: ',i.fechapesaje,'\nAltura: ',i.altura,' mts.\nAtleta: ', i.aon, '\nEstado IMC: ', i.desc_imc,'\nEdad: ', i.edad,'\nEstado GC: ', i.desc_gc)
             input('Presione enter para continuar...')
             clear()
         elif opc==6:
             for j,i in enumerate(personas):
-                    print('Persona encontrada!\nNombre: ', i.nom,'\nRut: ',i.rut,'\nSexo: ', i.sex, '\nFecha de nacimiento: ', i.fecha,'\nIMC: ', i.imc, '\nGrasa corporal: ', i.gc,'%')
+                    print('Persona',j,'\nNombre: ', i.nom,'\nRut: ',i.rut,'\nSexo: ', i.sex, '\nFecha de nacimiento: ', i.fecha,'\nIMC: ', i.imc, '\nGrasa corporal: ', i.gc,'%')
                     print('Peso: ', i.peso,'\nFecha de pesaje: ',i.fechapesaje,'\nAltura: ',i.altura,' mts.\nAtleta: ', i.aon, '\nEstado IMC: ', i.desc_imc,'\nEdad: ', i.edad,'\nEstado GC: ', i.desc_gc)
             input('Presione enter para continuar...')
             clear()
